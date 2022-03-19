@@ -1,19 +1,3 @@
-$(function(){
-	draw_number_line("#line_number", 1, -10, 20, 0, 300, 20, 20);
-	draw_number_line("#line_number", 2, -10, 20, 0, 300, 20, 70);
-	draw_number_line("#line_number", 3, -10, 20, 0, 300, 20, 120);
-	draw_number_line("#line_number", 5, -10, 20, 0, 300, 20, 170);
-	draw_number_line("#line_number", 7, -10, 20, 0, 300, 20, 220);
-	draw_number_line("#line_number", 10, -10, 20, 0, 300, 20, 270);
-	draw_number_line("#line_number", 1000, 990000, 1000000, 1000000, 300, 20, 320);
-	draw_number_line("#line_number", 5000, 990000, 1000000, 1000000, 300, 20, 370);
-	draw_number_line("#line_number", 5, -10, 20, 0, 300, 20, 420);
-	draw_number_line("#line_number", 5, -10, 25, 0, 300, 20, 470);
-	draw_number_line("#line_number", 10, -10, 20, 0, 300, 20, 520);
-	draw_number_line("#line_number", 10, -10, 30, 0, 300, 20, 570);
-});
-
-
 function draw_number_line(id, notch, min, max, base_notch, width, pos_x, pos_y){
     // min/maxの外側に伸ばす幅(固定)
     const outer_size = 5;

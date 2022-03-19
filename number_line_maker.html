@@ -4,9 +4,24 @@
 <head>
 	<meta charset="utf-8" >
 	<title>number line maker</title>
-	<script type="text/javascript" src="./js/lib/jquery-3.6.0.min.js"></script>
 	<script type="text/javascript" src="./js/lib/d3.v7.3.0.min.js"></script>
 	<script type="text/javascript" src="./js/number_line_maker.js"></script>
+	<script>
+	document.addEventListener("DOMContentLoaded", function(event){
+		draw_number_line("#line_number", 1, -10, 20, 0, 300, 20, 20);
+		draw_number_line("#line_number", 2, -10, 20, 0, 300, 20, 70);
+		draw_number_line("#line_number", 3, -10, 20, 0, 300, 20, 120);
+		draw_number_line("#line_number", 5, -10, 20, 0, 300, 20, 170);
+		draw_number_line("#line_number", 7, -10, 20, 0, 300, 20, 220);
+		draw_number_line("#line_number", 10, -10, 20, 0, 300, 20, 270);
+		draw_number_line("#line_number", 1000, 990000, 1000000, 1000000, 300, 20, 320);
+		draw_number_line("#line_number", 5000, 990000, 1000000, 1000000, 300, 20, 370);
+		draw_number_line("#line_number", 5, -10, 20, 0, 300, 20, 420);
+		draw_number_line("#line_number", 5, -10, 25, 0, 300, 20, 470);
+		draw_number_line("#line_number", 10, -10, 20, 0, 300, 20, 520);
+		draw_number_line("#line_number", 10, -10, 30, 0, 300, 20, 570);
+	});
+	</script>
 </head>
 
 <body>
