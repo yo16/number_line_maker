@@ -31,9 +31,15 @@ function draw_number_line(id, notch, min, max, base_notch, width, pos_x, pos_y, 
     if( prioritize_notch ){
         if( (min%notch)!=0 ){
             min = min - min%notch;
+            if( min<0 ){
+                min -= notch;
+            }
         }
         if( (max%notch)!=0 ){
-            max = max - max%notch + notch;
+            max = max - max%notch;
+            if( max>0 ){
+                max += notch;
+            }
         }
     }
 
