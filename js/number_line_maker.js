@@ -1,4 +1,18 @@
-function draw_number_line(id, notch, min, max, base_notch, width, pos_x, pos_y){
+function draw_number_line(id, notch, min, max, base_notch, width, pos_x, pos_y, prioritize_notch=true){
+    /*数直線を描画する
+
+    Parameters
+        id: div要素ID。#を含めて渡すこと。
+        notch: 目盛幅
+        min: 最小値
+        max: 最大値
+        base_notch: 必ず目盛りを打つ点。ここを中心に最小、最大へ広げる
+        width: 数直線の幅。画面のピクセル数。
+        pos_x: 数直線を描画し始めるx時点。
+        pos_y: 数直線を描画し始めるy時点。
+        prioritize_notch:
+            min/maxで終わりにせず、notchの区切りのいいところまで描く
+    */
     // min/maxの外側に伸ばす幅(固定)
     const outer_size = 5;
     // 目盛の高さ(上/下)
@@ -11,6 +25,17 @@ function draw_number_line(id, notch, min, max, base_notch, width, pos_x, pos_y){
     const svg_id = "line_number_maker";
     // この１回の呼び出しで作成するグループのID
     let g_id = "g_"+svg_id+"_"+pos_x+"_"+pos_y;
+
+    // prioritize_notchのとき、
+    // min/maxをnotchの切りのいいところまで延長する
+    if( prioritize_notch ){
+        if( (min%notch)!=0 ){
+            min = min - min%notch;
+        }
+        if( (max%notch)!=0 ){
+            max = max - max%notch + notch;
+        }
+    }
 
     // 描画する点
     let notches = [];
